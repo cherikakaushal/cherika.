@@ -3,10 +3,30 @@ import { useEffect, useRef } from 'react';
 const skills = ['python', 'ml/ai', 'react', 'systems design', 'nlp', 'research', 'ui/ux', 'storytelling'];
 
 const timeline = [
-  { year: '2025', title: 'BuildVR' },
-  { year: '2026', title: 'Research Intern', detail: 'IIT Ropar' },
-  { year: '2026', title: 'Signal vs Noise' },
-  { year: '2026', title: 'When Systems Break' },
+  { date: '2024.06 - 2024.08', title: 'Full Stack Developer (MERN Stack) Apprenticeship', detail: 'IIT Kanpur' },
+  { date: '2024.08 - 2024.09', title: 'Specialized Training in AI/ML for Geodata Analysis', detail: 'ISRO' },
+  {
+    date: '2024.09 - 2024.10',
+    title: 'Studied 5G, 6G Networks & Neural Networks',
+    detail: '@ Punjabi University Patiala',
+  },
+  {
+    date: '2024.12 - 2026.05',
+    title: 'Marketing Intern',
+    detail: 'BuildVR & Grubox / Marketing, Content & Product Growth',
+  },
+  {
+    date: '2025.06 - 2025.08',
+    title: 'Summer Intern',
+    detail: 'BuildVR & Grubox / Full-time Development, Marketing & Product Building',
+  },
+  {
+    date: '2026.05 - present',
+    title: 'Research Intern',
+    detail: 'IIT Ropar / Data Science, ML & System Behaviour Research',
+  },
+  { date: '2026.05 - present', title: 'Signal vs Noise' },
+  { date: '2026.05 - present', title: 'When Systems Break' },
 ];
 
 export function About() {
@@ -49,14 +69,13 @@ export function About() {
           <div>
             <div className="about-stat about-reveal">
               <span className="stat-number">2027</span>
-              <span className="stat-label">expected graduation</span>
             </div>
             <div className="about-divider" />
             <div className="about-stat about-reveal">
               <p className="about-location">
-                Punjabi University,
+                <strong>B.Tech Computer Science Engineering</strong>
                 <br />
-                Patiala <span>to</span> B.Tech CSE
+                Punjabi University, Patiala
               </p>
             </div>
             <div className="about-divider" />
@@ -85,20 +104,19 @@ export function About() {
               ))}
             </div>
 
-            <div className="research-timeline about-reveal">
-              <p className="timeline-label">research timeline</p>
-              <div className="timeline-list">
-                {timeline.map((item) => (
-                  <div key={`${item.year}-${item.title}`} className="timeline-item">
-                    <span className="timeline-year">{item.year}</span>
-                    <div>
-                      <p className="timeline-title">{item.title}</p>
-                      {item.detail && <p className="timeline-detail">{item.detail}</p>}
-                    </div>
-                  </div>
-                ))}
+          </div>
+        </div>
+
+        <div className="research-timeline about-reveal">
+          <p className="timeline-label">experience trace</p>
+          <div className="timeline-list">
+            {timeline.map((item) => (
+              <div key={`${item.date}-${item.title}`} className="timeline-item">
+                <span className="timeline-year">{item.date}</span>
+                <span className="timeline-title">{item.title}</span>
+                {item.detail && <span className="timeline-detail">{item.detail}</span>}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

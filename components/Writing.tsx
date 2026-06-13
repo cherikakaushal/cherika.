@@ -1,34 +1,24 @@
 import { useEffect, useRef } from 'react';
 
 type Post = {
-  type: string;
-  date: string;
   title: string;
   desc: string | null;
 };
 
 const posts: Post[] = [
   {
-    type: 'essay',
-    date: 'jun 2026',
     title: 'what happens when information becomes noise',
     desc: 'a field note from Signal vs Noise on bias, missing context, and fragile meaning.',
   },
   {
-    type: 'essay',
-    date: 'may 2026',
     title: 'systems fail gradually, then suddenly',
     desc: 'what When Systems Break taught me about drift, stress, and hidden failure modes.',
   },
   {
-    type: 'essay',
-    date: 'apr 2026',
     title: 'why explainability matters more than accuracy',
     desc: 'thinking through research at IIT Ropar and why correct answers still need reasons.',
   },
   {
-    type: 'thought',
-    date: 'mar 2026',
     title: 'research tools should reduce friction, not curiosity',
     desc: 'notes from ARPIS on reading, retrieval, and making dense papers easier to approach.',
   },
@@ -77,10 +67,11 @@ export default function Writing() {
         <div className="writing-layout">
           <div className="write-list">
             {posts.map((post) => (
-              <div key={`${post.date}-${post.title}`} className="write-item">
+              <div key={post.title} className="write-item">
                 <div className="write-meta">
-                  <span className="write-type">{post.type}</span>
-                  <span className="write-date">{post.date}</span>
+                  <span className="write-type" aria-hidden="true">
+                    &rarr;
+                  </span>
                 </div>
                 <div className="write-body">
                   <div className="write-title">{post.title}</div>
