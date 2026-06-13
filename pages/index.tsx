@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import Intro from '../components/Intro';
+import Research from '../components/Research';
 import Work from '../components/Work';
 import Writing from '../components/Writing';
 import { Ideas, Interests } from '../components/Ideas';
@@ -43,6 +44,7 @@ export default function Home() {
       <main>
         <Hero />
         <Intro />
+        <Research />
         <Work />
         <Writing />
         <Ideas />

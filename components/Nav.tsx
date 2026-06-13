@@ -7,6 +7,7 @@ type NavProps = {
 };
 
 const links = [
+  { label: 'research', href: '#research' },
   { label: 'work', href: '#work' },
   { label: 'writing', href: '#writing' },
   { label: 'ideas', href: '#ideas' },
