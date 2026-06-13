@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 export default function Intro() {
   const ref = useRef<HTMLElement | null>(null);
@@ -33,12 +34,9 @@ export default function Intro() {
         <div className="intro-side">
           <div className="intro-label">/ intro</div>
           <figure className="intro-polaroid reveal">
-            <Image
-              src="/editorial-polaroid.jpg"
+            <img
+              src={`${basePath}/editorial-polaroid.jpg`}
               alt="Small editorial illustration"
-              width={450}
-              height={338}
-              sizes="(max-width: 520px) 76vw, 15rem"
             />
             <figcaption>field note / still figuring things out</figcaption>
           </figure>
